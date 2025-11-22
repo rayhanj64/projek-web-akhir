@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:8111
--- Generation Time: Nov 22, 2025 at 08:42 AM
+-- Generation Time: Nov 22, 2025 at 11:03 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,6 +35,7 @@ CREATE TABLE `catatan` (
   `diastole` int(11) NOT NULL,
   `gula_darah` int(11) NOT NULL,
   `detak_jantung` int(11) NOT NULL,
+  `catatan_harian` text DEFAULT NULL,
   `id_catatan` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
