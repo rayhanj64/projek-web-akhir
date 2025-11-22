@@ -11,6 +11,7 @@
 </head>
 <body>
     <!-- 
+    di phpmyadmin ku, database sqlnya tak namain "personal_health_record" . samain aja biar connect.php gk error
 
     tabel users (akun user + identitas dasar user yg konstan & gk berubah2):
     1. id_user (PK auto increment)
@@ -66,6 +67,7 @@
 
     klo yg login itu admin, di atas sendiri ada tombol buat akses index_admin.php
     admin tetap dianggap kayak user biasa, bisa isi catatan kesehatan sendiri, tapi juga bisa akses folder admin
+    
     -->
 </body>
 </html>
