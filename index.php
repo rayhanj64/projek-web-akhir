@@ -26,6 +26,8 @@
     (klo aktif = 0, index.php g ada isinya selain notif kalo akun dibanned)
     yg diisi user di register.php cuma no 2-7, no 1, 8, 9 dihandle sistem
 
+    sebenarnya agak bingung buat tinggi, enaknya ditaruh di tabel users atau catatan
+    gatau username & nama mending sama atau beda
     sebenarnya kepikiran buat pisah tabel users = username & password, & tabel profil = identitas dasar user pake id_user sbg penghubung
     tp biar simpel digabung aja
     sama kepikiran buat password:
@@ -59,8 +61,6 @@
 
     sistole & diastole dimasukin bareng jadi tekanan darah (sistole/diastole mmHg)
     (cth: 120/80 mmHg)
-
-    sebenarnya agak bingung buat tinggi, enaknya ditaruh di tabel users atau catatan
 
     nnt di file index ini:
     1. display semua catatan kesehatan user 
