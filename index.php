@@ -41,7 +41,8 @@
     5. diastole (mmHg)
     6. gula_darah (mg/dL)
     7. detak_jantung (bpm)
-    8. id_catatan (PK auto increment)
+    8. catatan_harian (catatan yg diinput pake textarea html. satu2nya data yg opsional)
+    9. id_catatan (PK auto increment)
 
     katanya ngabGPT: 
     cara simpan float (berat & tinggi) di database mysql itu pake tipe data DECIMAL
@@ -63,7 +64,7 @@
 
     nnt di file index ini:
     1. display semua catatan kesehatan user 
-    2. ada tombol 'tambah catatan' buat ngisi tabel catatan no 3-7. no 1,2,8 dihandle sistem
+    2. ada tombol 'tambah catatan' buat ngisi tabel catatan no 3-8. no 1,2,9 dihandle sistem
 
     klo yg login itu admin, di atas sendiri ada tombol buat akses index_admin.php
     admin tetap dianggap kayak user biasa, bisa isi catatan kesehatan sendiri, tapi juga bisa akses folder admin
