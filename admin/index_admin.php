@@ -2,22 +2,18 @@
 
 include '../utility/connect.php';
 
+include '../utility/fungsi.php';
+//buat fungsi hitung umur
+
 //cuma user yg rolenya admin yg boleh akses halaman ini
 
 // if($_SESSION['role'] != 'admin') {
 //     header("Location: ../index.php");
 // }
 
-function hitung_umur($tgl_lahir) {
-    $tgl_lahir = new DateTime($tgl_lahir);
-    $skrg = new DateTime('today');
-    $umur = $skrg->diff($tgl_lahir)->y;
-    return $umur;
-}
-
 $nomor = 0;
 
-$sql = "SELECT * FROM users ORDER BY nama ASC";
+$sql = "SELECT * FROM users WHERE role = 'user' ORDER BY nama ASC";
 $data_users = mysqli_query($connect, $sql);
 
 ?>

@@ -1,4 +1,15 @@
 <?php
+include 'utility/session.php';
+include 'utility/connect.php';
+include 'utility/fungsi.php';
+
+
+$username = $_SESSION['username'];
+$nama = $_SESSION['nama'];
+$id_user = $_SESSION['id_user'];
+$role = $_SESSION['role'];
+
+$sql_FRS = "SELECT  FROM users WHERE username = '$username'";
 
 ?>
 
@@ -70,5 +81,10 @@
     admin tetap dianggap kayak user biasa, bisa isi catatan kesehatan sendiri, tapi juga bisa akses folder admin
     
     -->
+    <h1>Selamat datang, <?php echo $nama; ?>!</h1>
+
+    <?php if ($role == 'admin') { ?>
+    <a href="admin/index_admin.php">Masuk ke halaman admin</a>
+    <?php } ?>
 </body>
 </html>
