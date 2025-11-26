@@ -26,6 +26,7 @@ if (isset($_POST['login'])) {
     $_SESSION['id_user'] = $user['id_user'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['role'] = $user['role'];
+    $_SESSION['aktif'] = $user['aktif'];
 
     //arahin ke dashboard index
     header("Location: ../index.php");

@@ -12,8 +12,8 @@ if($_SESSION['role'] != 'admin') {
 
 $nomor = 0;
 
-$sql_user = "SELECT * FROM users WHERE role = 'user' ORDER BY nama ASC";
-$data_users = mysqli_query($connect, $sql_user);
+$sql_admin = "SELECT * FROM users WHERE role = 'admin' ORDER BY nama ASC";
+$data_admin = mysqli_query($connect, $sql_admin);
 
 ?>
 
@@ -22,29 +22,26 @@ $data_users = mysqli_query($connect, $sql_user);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daftar Admin</title>
 </head>
 <body>
     <!-- 
-    isinya tabel buat display data users, isi kolom:
+    isinya tabel buat display data admin, isi kolom:
     1. username
     2. nama
     3. tgl_lahir
     4. gender
     5. tinggi
     6. umur (tgl skrg - tgl lahir)
-    7. tombol buat ngeban user (set aktif = 0). klo user kebanned, jadi tombol buat unban user (set aktif = 1)
-    aktif = 0 berarti user dibanned
-    aktif = 1 berarti user gk dibanned
-    8. tombol buat lihat catatan kesehatan per user (arahin ke lihat_catatan.php buat liat detail catatan kesehatan per user berdasarkan id_user)
+    7. tombol buat lihat catatan kesehatan per user (arahin ke lihat_catatan.php buat liat detail catatan kesehatan per user berdasarkan id_user)
     -->
     <a href="../index.php">Kembali ke halaman utama</a>
     <br><br>
 
-    <a href="daftar_admin.php">Lihat Daftar Admin</a>
+    <a href="index_admin.php">Lihat Daftar Pengguna</a>
     <br><br>
 
-    <h1>Daftar Pengguna</h1>
+    <h1>Daftar Admin</h1>
 <table>
     <tr>
         <th>Nomor</th>
@@ -54,11 +51,10 @@ $data_users = mysqli_query($connect, $sql_user);
         <th>Jenis Kelamin</th>
         <th>Tinggi</th>
         <th>Umur</th>
-        <th>Ban / Unban</th>
         <th>Lihat Catatan</th>
     </tr>
     <?php 
-    while ($row = mysqli_fetch_assoc($data_users)) {
+    while ($row = mysqli_fetch_assoc($data_admin)) {
     $nomor++;
     $id_user = $row['id_user'];
     $username = $row['username'];
@@ -77,14 +73,7 @@ $data_users = mysqli_query($connect, $sql_user);
         <th><?php echo $gender; ?></th>
         <th><?php echo $tinggi; ?> cm</th>
         <th><?php echo $umur; ?> tahun</th>
-        <?php switch ($aktif) {
-                case 1: ?>
-        <th><a href="ban_unban.php?aktif=<?php echo $aktif; ?>&id_user=<?php echo $id_user ?>" class="btn">Ban User</th>
-        <?php   break;
-                case 0: ?>
-        <th><a href="ban_unban.php?aktif=<?php echo $aktif; ?>&id_user=<?php echo $id_user ?>" class="btn">Unban User</a></th>
-        <?php   break; } ?>
-        <th><a href="lihat_catatan.php?id_user=<?php echo $id_user; ?>&role=user" class="btn">Lihat Catatan</a></th>
+        <th><a href="lihat_catatan.php?id_user=<?php echo $id_user; ?>&role=admin" class="btn">Lihat Catatan</a></th>
     </tr>
 
     <?php } ?>
